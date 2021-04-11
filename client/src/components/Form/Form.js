@@ -19,7 +19,7 @@ const Form = ({ currentId, setCurrentId }) => {
 
   const clear = () => {
     setCurrentId(0);
-    setPostData({ title: '', message: '', tags: '', selectedFile: '' });
+    setPostData({ title: '', message: '', tags: ''});
   };
 
   const handleSubmit = async (e) => {
@@ -49,11 +49,10 @@ const Form = ({ currentId, setCurrentId }) => {
       <form autoComplete="off" noValidate className={`${classes.root} ${classes.form}`} onSubmit={handleSubmit}>
         <Typography variant="h6">{currentId ? `Editing "${post.title}"` : 'Share Your Playlist'}</Typography>
         <TextField name="Playlist Title" variant="outlined" label="Playlist Title" fullWidth value={postData.title} onChange={(e) => setPostData({ ...postData, title: e.target.value })} />
-        <TextField name="Link" variant="outlined" label="Description" fullWidth multiline rows={4} value={postData.message} onChange={(e) => setPostData({ ...postData, message: e.target.value })} />
+        <TextField name="Link" variant="outlined" label="Link To Playlist Goes Here" fullWidth multiline rows={2} value={postData.message} onChange={(e) => setPostData({ ...postData, message: e.target.value })} />
         <TextField name="Video Game Tags" variant="outlined" label="Video Game Tags (comma separated)" fullWidth value={postData.tags} onChange={(e) => setPostData({ ...postData, tags: e.target.value.split(',') })} />
-        <div className={classes.fileInput}><FileBase type="file" multiple={false} onDone={({ base64 }) => setPostData({ ...postData, selectedFile: base64 })} /></div>
-        <Button className={classes.buttonSubmit} variant="contained" color="primary" size="large" type="submit" fullWidth>Submit</Button>
-        <Button variant="contained" color="secondary" size="small" onClick={clear} fullWidth>Clear</Button>
+        <Button className={classes.buttonSubmit} variant="contained" size="large" type="submit" fullWidth>Submit</Button>
+        <Button variant="contained" size="small" onClick={clear} fullWidth>Clear</Button>
       </form>
     </Paper>
   );

@@ -6,17 +6,12 @@ import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles((theme) => ({
   root: {
     "& .MuiInputLabel-outlined:not(.MuiInputLabel-shrink)": {
-      // Default transform is "translate(14px, 20px) scale(1)""
-      // This lines up the label with the initial cursor position in the input
-      // after changing its padding-left.
-      transform: "translate(34px, 20px) scale(1);"
+      transform: "translate(34px, 20px) scale(1);",
     }
   },
   inputRoot: {
     color: "Red",
-    // This matches the specificity of the default styles at https://github.com/mui-org/material-ui/blob/v4.11.3/packages/material-ui-lab/src/Autocomplete/Autocomplete.js#L90
     '&[class*="MuiOutlinedInput-root"] .MuiAutocomplete-input:first-child': {
-      // Default left padding is 6px
       paddingLeft: 26
     },
     "& .MuiOutlinedInput-notchedOutline": {
@@ -45,10 +40,10 @@ const GameSearch = ( ) => {
       id="combo-box-demo"
       options={top100Films}
       getOptionLabel={(option) => option.title}
-      style={{ width: 500},{alignItems: 'center'}}
+      style={{ width: 500},{alignItems: 'center'}, {margin: 25}}
       
       
-      renderInput={(params) => <TextField {...params} label="Combo box" variant="outlined" />}
+      renderInput={(params) => <TextField {...params} label="Search for a Game..." variant="outlined" />}
     />
   );
 }

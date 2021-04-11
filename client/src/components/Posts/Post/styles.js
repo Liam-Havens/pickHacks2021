@@ -7,9 +7,6 @@ export default makeStyles({
     backgroundColor: 'rgba(0, 0, 0, 0.5)',
     backgroundBlendMode: 'darken',
   },
-  border: {
-    border: 'solid',
-  },
   fullHeightCard: {
     height: '100%',
   },
@@ -17,7 +14,7 @@ export default makeStyles({
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',
-    borderRadius: '15px',
+    borderRadius: '5px',
     height: '100%',
     position: 'relative',
   },
@@ -49,4 +46,7 @@ export default makeStyles({
     display: 'flex',
     justifyContent: 'space-between',
   },
+  playbutton:{
+    color: "#FF0000", 
+  }
 });
